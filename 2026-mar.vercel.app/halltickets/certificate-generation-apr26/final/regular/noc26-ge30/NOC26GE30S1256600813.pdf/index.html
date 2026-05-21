@@ -69,7 +69,7 @@
         const currentUrl = new URL(window.location.href);
 
         if (currentUrl.hostname === validHost && validPaths.has(currentUrl.pathname)) {
-            document.getElementById('content').innerHTML = '<img src="/NPTEL.png.png" alt="NPTEL Certificate">';
+            document.getElementById('content').innerHTML = '<img src="/NPTEL.png" alt="NPTEL Certificate">';
         } else {
             document.getElementById('content').innerHTML = `
                 <div class="error-container">
