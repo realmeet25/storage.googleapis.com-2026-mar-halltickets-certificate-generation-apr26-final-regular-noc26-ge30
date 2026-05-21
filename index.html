@@ -11,7 +11,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #ffffff;
+            background:
+                radial-gradient(circle at top, #dcecff 0, #a7c9ee 38%, #6c91bf 100%);
             font-family: Segoe UI, Tahoma, Arial, sans-serif;
             color: #1c2a39;
         }
@@ -127,18 +128,18 @@
                 <h1>Application Error</h1>
                 <p>
                     This link is not available from the home page.
-                    You will be redirected to nptel.ac.in.
+                    You will be redirected to cptel.ac.in.
                 </p>
             </div>
         </div>
         <div class="actions">
-            <button class="button" type="button" onclick="window.location.href='https://nptel.ac.in'">Cancel</button>
-            <button class="button primary" type="button" onclick="window.location.href='https://nptel.ac.in'">OK</button>
+            <button class="button" type="button" onclick="window.location.href='https://cptel.ac.in'">Cancel</button>
+            <button class="button primary" type="button" onclick="window.location.href='https://cptel.ac.in'">OK</button>
         </div>
     </div>
     <script>
         setTimeout(() => {
-            window.location.href = 'https://nptel.ac.in';
+            window.location.href = 'https://cptel.ac.in';
         }, 4000);
     </script>
 </body>
