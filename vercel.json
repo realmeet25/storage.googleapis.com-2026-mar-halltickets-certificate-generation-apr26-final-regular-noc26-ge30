@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/2026-mar.vercel.app/halltickets/certificate-generation-apr26/final/regular/noc26-ge30/NOC26GE30S1256600813.pdf",
-      "destination": "/2026-mar.vercel.app/halltickets/certificate-generation-apr26/final/regular/noc26-ge30/NOC26GE30S1256600813.pdf/index.html"
+      "source": "/halltickets/certificate-generation-apr26/final/regular/noc26-ge30/NOC26GE30S1256600813.pdf",
+      "destination": "/halltickets/certificate-generation-apr26/final/regular/noc26-ge30/NOC26GE30S1256600813.pdf/index.html"
     },
     {
       "source": "/:path*",
