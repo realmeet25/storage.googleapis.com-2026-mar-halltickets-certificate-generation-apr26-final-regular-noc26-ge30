@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPTEL Certificate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        img {
+            max-width: 90vw;
+            max-height: 90vh;
+            height: auto;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .error-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            max-width: 500px;
+        }
+        
+        .error-container h1 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .error-container p {
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .error-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .error-btn:hover {
+            background-color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content"></div>
+    
+    <script>
+        // Get the current URL
+        const currentUrl = window.location.href;
+        const basePath = 'noc26-ge30.vercel.app';
+        const validPath = '/NOC26GE30S1256600813.pdf';
+        
+        // Check if the current URL contains the base domain
+        if (currentUrl.includes(basePath)) {
+            // Check if the specific certificate path is accessed
+            if (currentUrl.includes(validPath)) {
+                // Show the certificate
+                document.getElementById('content').innerHTML = `
+                    <img src="NPTEL.png.png" alt="NPTEL Certificate">
+                `;
+            } else {
+                // Show error and redirect button
+                document.getElementById('content').innerHTML = `
+                    <div class="error-container">
+                        <h1>Access Denied</h1>
+                        <p>This certificate is not accessible from this location.</p>
+                        <p>Please use the valid certificate link.</p>
+                        <button class="error-btn" onclick="redirectHome()">Go to Home</button>
+                    </div>
+                `;
+            }
+        } else {
+            // If not on the correct domain at all
+            document.getElementById('content').innerHTML = `
+                <div class="error-container">
+                    <h1>Access Denied</h1>
+                    <p>Invalid access location.</p>
+                    <button class="error-btn" onclick="redirectHome()">Go to Home</button>
+                </div>
+            `;
+        }
+        
+        function redirectHome() {
+            window.location.href = 'https://nptel.ac.in';
+        }
+    </script>
+</body>
+</html>
