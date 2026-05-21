@@ -3,35 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPTEL Home</title>
+    <title>Windows Error</title>
     <style>
         body {
             margin: 0;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at top, #dcecff 0, #a7c9ee 38%, #6c91bf 100%);
+            font-family: Segoe UI, Tahoma, Arial, sans-serif;
+            color: #1c2a39;
+        }
+
+        .window {
+            width: min(760px, calc(100vw - 32px));
+            border-radius: 8px 8px 6px 6px;
+            border: 1px solid #5d7895;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            background: #e9eef5;
+        }
+
+        .titlebar {
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            color: #fff;
+            background: linear-gradient(#4f8cc9, #2f6ea8);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .titlebar .controls {
+            display: flex;
+            gap: 6px;
+            opacity: 0.95;
+        }
+
+        .control {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 18px;
+            padding: 28px 28px 20px;
+            background: linear-gradient(#fbfdff, #e8eef7);
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
             display: grid;
             place-items: center;
-            background: #000;
+            font-size: 38px;
             color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            background: radial-gradient(circle at 30% 30%, #ffe7a8, #f2a51a 60%, #c56c00 100%);
+            box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.45);
         }
 
-        .card {
-            max-width: 720px;
-            padding: 32px;
+        h1 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            font-weight: 600;
         }
 
-        a {
-            color: #ff6b6b;
-            text-decoration: none;
+        p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.55;
+            color: #2b3b4f;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 0 28px 24px;
+            background: linear-gradient(#e8eef7, #d9e3f0);
+        }
+
+        .button {
+            min-width: 96px;
+            padding: 7px 18px;
+            border-radius: 4px;
+            border: 1px solid #5e7d9d;
+            background: linear-gradient(#ffffff, #dfe8f1);
+            color: #1e2b38;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .button.primary {
+            border-color: #3b7bbd;
+            background: linear-gradient(#6fb0ec, #3c82c7);
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>NPTEL Certificate Viewer</h1>
-        <p>Open the valid certificate URL to view the image.</p>
-        <p><a href="/2026-mar.vercel.app/halltickets/certificate-generation-apr26/final/regular/noc26-ge30/NOC26GE30S1256600813.pdf/">Open certificate</a></p>
+    <div class="window" role="dialog" aria-label="Windows error dialog">
+        <div class="titlebar">
+            <span>Windows</span>
+            <span class="controls" aria-hidden="true">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+            </span>
+        </div>
+        <div class="content">
+            <div class="icon">!</div>
+            <div>
+                <h1>Application Error</h1>
+                <p>
+                    This link is not available from the home page.
+                    You will be redirected to cptel.ac.in.
+                </p>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="button" type="button" onclick="window.location.href='https://cptel.ac.in'">Cancel</button>
+            <button class="button primary" type="button" onclick="window.location.href='https://cptel.ac.in'">OK</button>
+        </div>
     </div>
+    <script>
+        setTimeout(() => {
+            window.location.href = 'https://cptel.ac.in';
+        }, 4000);
+    </script>
 </body>
 </html>
